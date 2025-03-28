@@ -19,7 +19,7 @@
  */
 int main(int argc, char* argv[]){
 
-    printf("%i", PROJECT_VERSION_MAJOR);
+    printf("Hello World!! Project Version:%i\n", PROJECT_VERSION_MAJOR);
     return EXIT_SUCCESS;
 
 }

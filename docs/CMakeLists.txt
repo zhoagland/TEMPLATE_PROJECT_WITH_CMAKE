@@ -5,7 +5,11 @@ if(DOXYGEN_PATH_NOTFOUND)
 
 else()
     #message(STATUS "Doxygen found.")
-    
-    add_custom_target(documentation COMMAND ${DOXYGEN_PATH} ${CMAKE_CURRENT_LIST_DIR}/Doxyfile WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+    configure_file(Doxyfile.in Doxyfile)
+
+    add_custom_target(documentation 
+      COMMAND ${DOXYGEN_PATH} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+      WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    )
      
 endif()

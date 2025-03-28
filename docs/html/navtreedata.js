@@ -24,12 +24,20 @@
 */
 var NAVTREE =
 [
-  [ "Rs Calculator", "index.html", ]
+  [ "Template_Project", "index.html", [
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "Globals", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ]
+      ] ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"dir_0d4345bb4099aeaa06c1bd38ea2cf2b5.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
