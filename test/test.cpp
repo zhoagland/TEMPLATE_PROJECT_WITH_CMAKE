@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
 
 TEST(TestCase, TestName){
-    ASSERT_EQ(1, 1);
+    ASSERT_EQ(0, 1) << "Test Failed";
 }
