@@ -25,8 +25,9 @@ target_link_libraries(${EXECUTABLE_NAME}
     MODULE_NAME_REPLACE_ME
 )
 
-#install directive adds the exe to the bin folder in the build dir.
-install(TARGETS ${EXECUTABLE_NAME} 
+install(
+    TARGETS ${EXECUTABLE_NAME}
     CONFIGURATIONS Release
-    DESTINATION bin 
-    COMPONENT out_component)
+    RUNTIME DESTINATION bin
+    COMPONENT out_component
+)

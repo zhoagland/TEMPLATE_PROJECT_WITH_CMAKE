@@ -38,7 +38,26 @@ target_link_libraries(${DYNAMIC_LIB_NAME}
 )
 
 #install directive adds the exe to the bin folder in the build dir.
-install(TARGETS ${DYNAMIC_LIB_NAME} 
-    CONFIGURATIONS Release
-    DESTINATION bin 
-    COMPONENT out_component)
+install(
+    TARGETS ${DYNAMIC_LIB_NAME}
+    EXPORT ${DYNAMIC_LIB_NAME}_export
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+)
+
+install(
+    TARGETS ${DYNAMIC_LIB_NAME}_public_headers
+    PUBLIC_HEADER DESTINATION include
+)
+
+install(
+    TARGETS ${DYNAMIC_LIB_NAME}_public_headers
+    EXPORT ${DYNAMIC_LIB_NAME}_export
+)
+
+install(
+    EXPORT ${DYNAMIC_LIB_NAME}_export
+    DESTINATION lib/${DYNAMIC_LIB_NAME}
+    NAMESPACE ${DYNAMIC_LIB_NAME}::
+)
